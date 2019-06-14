@@ -23,13 +23,13 @@ k=1;
 
 load(dir0(k).name)
 
-%%     detect minima
-[min_100]=movmin(Trace_data(:,4),100);
-[min_1000]=movmin(Trace_data(:,4),1000);
-[min_10000]=movmin(Trace_data(:,4),10000);
+%%     detect minima and then smooth
+[min_100]       = movmean(movmin(Trace_data(:,4),50),50);
+[min_1000]      = movmean(movmin(Trace_data(:,4),1000),100);
+[min_10000]     = movmean(movmin(Trace_data(:,4),10000),100);
 %%
-l_inf = 7.41;
-l_sup = 7.44;
+l_inf = 3.34;
+l_sup = l_inf +0.05;
 subplot(4,2,1)
 hold on
 plot(Trace_data(:,1),Trace_data(:,4),'k')
