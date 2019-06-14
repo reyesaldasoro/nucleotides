@@ -28,8 +28,8 @@ load(dir0(k).name)
 [min_1000]=movmin(Trace_data(:,4),1000);
 [min_10000]=movmin(Trace_data(:,4),10000);
 %%
-l_inf = 2.83;
-l_sup = 2.86;
+l_inf = 7.41;
+l_sup = 7.44;
 subplot(4,2,1)
 hold on
 plot(Trace_data(:,1),Trace_data(:,4),'k')
